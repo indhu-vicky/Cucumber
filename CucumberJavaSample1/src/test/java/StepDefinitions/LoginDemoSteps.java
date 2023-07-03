@@ -4,7 +4,8 @@ import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+//import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.cucumber.java.en.*;
 
@@ -22,9 +23,11 @@ public class LoginDemoSteps {
 		String projectPath=System.getProperty("user.dir");
 		System.out.println("Project path is:"+projectPath);
 		
-		System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/resources/Drivers/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", projectPath+"/src/test/resources/Drivers/geckodriver.exe");
+//		System.setProperty("webdriver.chrome.driver", projectPath+"/src/test/resources/Drivers/chromedriver.exe");
 	    
-		driver = new ChromeDriver();
+		driver = new FirefoxDriver();
+//		driver = new ChromeDriver();
 		 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
@@ -39,12 +42,12 @@ public class LoginDemoSteps {
 		driver.navigate().to("https://example.testproject.io/web/");
 	}
 
-	@When("user enters username and password")
-	public void user_enters_username_and_password() throws InterruptedException {
+	@When("^user enters \"(.*)\" and \"(.*)\"$")
+	public void user_enters_UserName_and_Password(String username, String password) throws InterruptedException {
 		System.out.println("Inside step: User enters username and password ");
 		
-		driver.findElement(By.id("name")).sendKeys("Indhumathi");
-		driver.findElement(By.id("password")).sendKeys("12345");
+		driver.findElement(By.id("name")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 		
 		Thread.sleep(2000);
 	}
@@ -65,7 +68,8 @@ public class LoginDemoSteps {
 		Thread.sleep(3000);
 		
 		driver.close();
-		driver.quit();
+//		commenting it for sessionNotCreatedException with firefox
+//		driver.quit();
 	}
 	
 }
