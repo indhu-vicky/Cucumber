@@ -19,3 +19,6 @@ Context: 1.Added static in Gherkin feature file, And executed it
 
 Fifth edition on July 04,2023
 Context: Added Page Object Model for test script
+
+Sixth edition on July 04,2023
+Context: Added Page Factory concept of POM in Selenium
