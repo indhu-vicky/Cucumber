@@ -22,3 +22,6 @@ Context: Added Page Object Model for test script
 
 Sixth edition on July 04,2023
 Context: Added Page Factory concept of POM in Selenium
+
+Seventh edition on July 05,2023
+Context: Tested cucumber Tags on Gherkin elements
