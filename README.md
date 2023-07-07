@@ -25,3 +25,6 @@ Context: Added Page Factory concept of POM in Selenium
 
 Seventh edition on July 05,2023
 Context: Tested cucumber Tags on Gherkin elements
+
+Eighth edition on July 07,2023
+Context:  Scenario Hooks, Step Hooks, Conditional Hooks
